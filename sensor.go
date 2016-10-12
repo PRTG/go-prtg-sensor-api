@@ -21,31 +21,39 @@ const (
 	UnitTimeHours      = "TimeHours"
 )
 
-//Unit of Volume or SpeedSize
+// Unit of Volume or SpeedSize
 const (
-	One      = "One"
-	Kilo     = "Kilo"
-	Mega     = "Mega"
-	Giga     = "Giga"
-	Tera     = "Tera"
-	Byte     = "Byte"
-	KiloByte = "KiloByte"
-	MegaByte = "MegaByte"
-	GigaByte = "Gigabyte"
-	TeraByte = "TeraByte"
-	Bit      = "Bit"
-	KiloBit  = "KiloBit"
-	MegaBit  = "MegaBit"
-	GigaBit  = "GigaBit"
-	TeraBit  = "TeraBit"
+	UnitOne      = "One"
+	UnitKilo     = "Kilo"
+	UnitMega     = "Mega"
+	UnitGiga     = "Giga"
+	UnitTera     = "Tera"
+	UnitByte     = "Byte"
+	UnitKiloByte = "KiloByte"
+	UnitMegaByte = "MegaByte"
+	UnitGigaByte = "Gigabyte"
+	UnitTeraByte = "TeraByte"
+	UnitBit      = "Bit"
+	UnitKiloBit  = "KiloBit"
+	UnitMegaBit  = "MegaBit"
+	UnitGigaBit  = "GigaBit"
+	UnitTeraBit  = "TeraBit"
 )
 
-//Unit of speedTime
+// Unit of speedTime
 const (
-	Second = "Second"
-	Minute = "Minute"
-	Hour   = "Hour"
-	Day    = "Day"
+	UnitSecond = "Second"
+	UnitMinute = "Minute"
+	UnitHour   = "Hour"
+	UnitDay    = "Day"
+)
+
+// Options for DecimalMode and Mode
+const (
+	OptionAbsolute   = "Absolute"
+	OptionDifference = "Difference"
+	OptionAuto       = "Auto"
+	OptionAll        = "All"
 )
 
 // SensorResponse is the struct returned by the sensor
@@ -66,7 +74,7 @@ type SensorChannel struct {
 	Channel string `json:"channel"`
 	Value   string `json:"value"`
 	// Options
-	CustwomUnit     string `json:"CustomUnit,omitempty"`
+	CustomUnit      string `json:"CustomUnit,omitempty"`
 	DecimalMode     string `json:"DecimalMode,omitempty"`
 	Float           int    `json:"Float,omitempty"`
 	LimitErrorMsg   string `json:"LimitErrorMsg,omitempty"`

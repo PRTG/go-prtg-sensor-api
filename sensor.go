@@ -3,6 +3,7 @@
 
 package prtg
 
+
 // PRTG Sensor string constants
 const (
 	UnitBytesBandwidth = "BytesBandwidth"
@@ -19,6 +20,35 @@ const (
 	UnitSpeedDisk      = "SpeedDisk"
 	UnitSpeedNet       = "SpeedNet"
 	UnitTimeHours      = "TimeHours"
+)
+
+
+//Unit of Volume or SpeedSize
+const (
+	One  = "One"
+	Kilo = "Kilo"
+	Mega = "Mega"
+	Giga = "Giga"
+	Tera = "Tera"
+	Byte = "Byte"
+	KiloByte = "KiloByte"
+	MegaByte = "MegaByte"
+	GigaByte = "Gigabyte"
+	TeraByte = "TeraByte"
+	Bit = "Bit"
+	KiloBit = "KiloBit"
+	MegaBit = "MegaBit"
+	GigaBit = "GigaBit"
+	TeraBit = "TeraBit"
+)
+
+//Unit of speedTime
+const (
+	Second = "Second"
+	Minute = "Minute"
+	Hour = "Hour"
+	Day = "Day"
+
 )
 
 // SensorResponse is the struct returned by the sensor

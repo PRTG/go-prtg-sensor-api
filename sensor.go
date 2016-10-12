@@ -10,6 +10,8 @@ API reference can be found here: https://prtg.paessler.com/api.htm?username=demo
 */
 package prtg
 
+import "encoding/json"
+
 // Units of channel values
 const (
 	UnitBytesBandwidth = "BytesBandwidth"
@@ -105,4 +107,10 @@ type SensorChannel struct {
 // AddChannel adds a new channel to a SensorResponse
 func (s *SensorResponse) AddChannel(channel SensorChannel) {
 	s.PRTG.Result = append(s.PRTG.Result, channel)
+}
+
+// String converts the SensorResponse to a JSON formatted string
+func (s SensorResponse) String() string {
+	b, _ := json.Marshal(s)
+	return string(b)
 }

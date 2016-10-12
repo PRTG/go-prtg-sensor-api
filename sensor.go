@@ -38,22 +38,25 @@ type SensorChannel struct {
 	// Default fields
 	Channel string `json:"channel"`
 	Value   string `json:"value"`
-	// Required options
-	ShowChart int `json:"ShowChart"`
-	ShowTable int `json:"ShowTable"`
-	// Additional options
+	// Options
+	CustwomUnit     string `json:"CustomUnit,omitempty"`
+	DecimalMode     string `json:"DecimalMode,omitempty"`
 	Float           int    `json:"Float,omitempty"`
-	Unit            string `json:"Unit,omitempty"`
-	CustomUnit      string `json:"CustomUnit,omitempty"`
-	LimitMinError   int    `json:"LimitMinError,omitempty"`
-	LimitMaxError   int    `json:"LimitMaxError,omitempty"`
-	LimitMinWarning int    `json:"limitMinWarning,omitempty"`
-	LimitMaxWarning int    `json:"LimitMaxWarning,omitempty"`
 	LimitErrorMsg   string `json:"LimitErrorMsg,omitempty"`
-	LimitWarningMsg string `json:"LimitWarningMsg,omitempty"`
+	LimitMaxError   int    `json:"LimitMaxError,omitempty"`
+	LimitMaxWarning int    `json:"LimitMaxWarning,omitempty"`
+	LimitMinError   int    `json:"LimitMinError,omitempty"`
+	LimitMinWarning int    `json:"limitMinWarning,omitempty"`
 	LimitMode       int    `json:"LimitMode,omitempty"`
-	ValueLookup     string `json:"ValueLookup,omitempty"`
+	LimitWarningMsg string `json:"LimitWarningMsg,omitempty"`
+	Mode            string `json:"Mode, omitempty"`
 	NotifyChanged   bool   `json:"NotifyChanged,omitempty"`
+	ShowChart       int    `json:"ShowChart"`
+	ShowTable       int    `json:"ShowTable"`
+	SpeedSize       string `json:"SpeedSize, omitempty"`
+	SpeedTime       string `json:"SpeedTime,omitempty"`
+	Unit            string `json:"Unit,omitempty"`
+	ValueLookup     string `json:"ValueLookup,omitempty"`
 	Warning         int    `json:"Warning,omitempty"`
 }
 

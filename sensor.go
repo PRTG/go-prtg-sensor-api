@@ -84,11 +84,11 @@ type SensorChannel struct {
 	LimitMinWarning int    `json:"limitMinWarning,omitempty"`
 	LimitMode       int    `json:"LimitMode,omitempty"`
 	LimitWarningMsg string `json:"LimitWarningMsg,omitempty"`
-	Mode            string `json:"Mode, omitempty"`
+	Mode            string `json:"Mode,omitempty"`
 	NotifyChanged   bool   `json:"NotifyChanged,omitempty"`
 	ShowChart       int    `json:"ShowChart"`
 	ShowTable       int    `json:"ShowTable"`
-	SpeedSize       string `json:"SpeedSize, omitempty"`
+	SpeedSize       string `json:"SpeedSize,omitempty"`
 	SpeedTime       string `json:"SpeedTime,omitempty"`
 	Unit            string `json:"Unit,omitempty"`
 	ValueLookup     string `json:"ValueLookup,omitempty"`

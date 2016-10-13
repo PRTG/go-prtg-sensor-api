@@ -30,7 +30,7 @@ const (
 	UnitTimeHours      = "TimeHours"
 )
 
-// Unit of Volume or SpeedSize
+// Unit of VolumeSize or SpeedSize
 const (
 	UnitOne      = "One"
 	UnitKilo     = "Kilo"
@@ -101,6 +101,7 @@ type SensorChannel struct {
 	SpeedTime       string `json:"SpeedTime,omitempty"`
 	Unit            string `json:"Unit,omitempty"`
 	ValueLookup     string `json:"ValueLookup,omitempty"`
+	VolumeSize      string `json:"VolumeSize,omitempty"`
 	Warning         int    `json:"Warning,omitempty"`
 }
 

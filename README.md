@@ -65,6 +65,7 @@ func main() {
 ```
 
 To test this example in your PRTG installation follow these steps:
+
 1. Build the example
 2. Copy the `.exe` file to `[PRTG install folder]\Custom Sensors\EXEXML`
 3. Go to PRTG web interface

@@ -16,7 +16,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/0xLigety/go-prtg-api"
+	"github.com/PaesslerAG/go-prtg-sensor-api"
 )
 
 func main() {

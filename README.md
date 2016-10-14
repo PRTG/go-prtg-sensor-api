@@ -75,5 +75,5 @@ To test this example in your PRTG installation follow these steps:
 7. Done
 
 ## Documentation
-- Soon on godoc.org (view locally using the [godoc commad](https://godoc.org/golang.org/x/tools/cmd/godoc))
+- [godoc.org/github.com/PaesslerAG/go-prtg-sensor-api](https://godoc.org/github.com/PaesslerAG/go-prtg-sensor-api)
 - [PRTG Manual](https://www.paessler.com/manuals/prtg/exe_script_advanced_sensor)

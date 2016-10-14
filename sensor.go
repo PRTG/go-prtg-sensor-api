@@ -3,7 +3,7 @@
 
 /*
 
-Package prtg implements the API for PRTG custom sensors. It provides all structs and constants needed to implements your own advanced exe sensor in go.
+Package prtg implements the API for PRTG custom sensors. It provides all structs and constants needed to implement your own advanced exe sensor in go.
 
 API reference can be found here: https://prtg.paessler.com/api.htm?username=demo&password=demodemo&tabid=7
 

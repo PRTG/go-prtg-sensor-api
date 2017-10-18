@@ -1,13 +1,9 @@
 // Copyright Paessler AG.
 // All Rights Reserved
 
-/*
-
-Package prtg implements the API for PRTG custom sensors. It provides all structs and constants needed to implement your own advanced exe sensor in go.
-
-API reference can be found here: https://prtg.paessler.com/api.htm?username=demo&password=demodemo&tabid=7
-
-*/
+// Package prtg implements the API for PRTG custom sensors. It provides all structs and constants needed to implement your own advanced exe sensor in go.
+//
+// API reference can be found here: https://prtg.paessler.com/api.htm?username=demo&password=demodemo&tabid=7
 package prtg
 
 import "encoding/json"
@@ -67,47 +63,48 @@ const (
 
 // SensorResponse is the struct returned by the sensor
 type SensorResponse struct {
-	PRTG SensorResult `json:"prtg"`
+	SensorResult `json:"prtg"`
 }
 
 // SensorResult contains the sensors channels and optional error/text
 type SensorResult struct {
-	Result []SensorChannel `json:"result"`
-	Error  string          `json:"error,omitempty"`
-	Text   string          `json:"text,omitempty"`
+	Channels []SensorChannel `json:"result"`
+	Error    int             `json:"error,omitempty"`
+	Text     string          `json:"text,omitempty"`
 }
 
 // SensorChannel represents a PRTG sensor channel
 type SensorChannel struct {
-	// Default fields
-	Channel string `json:"channel"`
-	Value   string `json:"value"`
+	Name      string  `json:"channel,omitempty"`
+	ChannelID *int    `json:",omitempty"`
+	Value     float64 ``
+
 	// Options
-	CustomUnit      string `json:"CustomUnit,omitempty"`
-	DecimalMode     string `json:"DecimalMode,omitempty"`
-	Float           int    `json:"Float,omitempty"`
-	LimitErrorMsg   string `json:"LimitErrorMsg,omitempty"`
-	LimitMaxError   int    `json:"LimitMaxError,omitempty"`
-	LimitMaxWarning int    `json:"LimitMaxWarning,omitempty"`
-	LimitMinError   int    `json:"LimitMinError,omitempty"`
-	LimitMinWarning int    `json:"limitMinWarning,omitempty"`
-	LimitMode       int    `json:"LimitMode,omitempty"`
-	LimitWarningMsg string `json:"LimitWarningMsg,omitempty"`
-	Mode            string `json:"Mode,omitempty"`
-	NotifyChanged   bool   `json:"NotifyChanged,omitempty"`
-	ShowChart       int    `json:"ShowChart"`
-	ShowTable       int    `json:"ShowTable"`
-	SpeedSize       string `json:"SpeedSize,omitempty"`
-	SpeedTime       string `json:"SpeedTime,omitempty"`
-	Unit            string `json:"Unit,omitempty"`
-	ValueLookup     string `json:"ValueLookup,omitempty"`
-	VolumeSize      string `json:"VolumeSize,omitempty"`
-	Warning         int    `json:"Warning,omitempty"`
+	Unit            string   `json:",omitempty"`
+	CustomUnit      string   `json:",omitempty"`
+	SpeedSize       string   `json:",omitempty"`
+	VolumeSize      string   `json:",omitempty"`
+	SpeedTime       string   `json:",omitempty"`
+	Mode            string   `json:",omitempty"`
+	Float           int      `json:",omitempty"`
+	DecimalMode     string   `json:",omitempty"`
+	Warning         int      `json:",omitempty"`
+	ShowChart       *int     `json:",omitempty"`
+	ShowTable       *int     `json:",omitempty"`
+	LimitMaxError   *float64 `json:",omitempty"`
+	LimitMaxWarning *float64 `json:",omitempty"`
+	LimitMinWarning *float64 `json:",omitempty"`
+	LimitMinError   *float64 `json:",omitempty"`
+	LimitErrorMsg   string   `json:",omitempty"`
+	LimitWarningMsg string   `json:",omitempty"`
+	LimitMode       int      `json:",omitempty"`
+	ValueLookup     string   `json:",omitempty"`
+	NotifyChanged   bool     `json:",omitempty"`
 }
 
 // AddChannel adds a new channel to a SensorResponse
 func (s *SensorResponse) AddChannel(channel SensorChannel) {
-	s.PRTG.Result = append(s.PRTG.Result, channel)
+	s.Channels = append(s.Channels, channel)
 }
 
 // String converts the SensorResponse to a JSON formatted string

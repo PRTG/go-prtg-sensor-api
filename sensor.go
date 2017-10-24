@@ -76,7 +76,7 @@ type SensorResult struct {
 // SensorChannel represents a PRTG sensor channel
 type SensorChannel struct {
 	Name      string  `json:"channel,omitempty"`
-	ChannelID *int    `json:",omitempty"`
+	ChannelID *int    `json:"channelid,omitempty"`
 	Value     float64 ``
 
 	// Options

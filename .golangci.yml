@@ -1,0 +1,16 @@
+run:
+  deadline: 5m
+  tests: false
+
+linters-settings:
+  errcheck:
+    # ignore stupid FlagCheck that is already checked, rest is default
+    ignore: fmt:.*
+
+linters:
+  enable-all: true
+  fast: false
+
+issues:
+  max-issues-per-linter: 50
+  max-same-issues: 50

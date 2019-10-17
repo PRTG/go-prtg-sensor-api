@@ -1,0 +1,35 @@
+include:
+  - project: "infrastructure/templates"
+    ref: master
+    file:  "/.golang.yml"
+  - project: "infrastructure/templates"
+    ref: master
+    file:  "/.runner-tags.yml"
+
+image: ${INFRA_GOLANG_IMAGE}
+
+stages:
+  - test
+
+golangci-lint:
+  stage: test
+  before_script:
+    - export GO111MODULE=on
+    - go mod download
+  script:
+    - go version
+    - golangci-lint run ./...
+  extends: .INFRA_RUNNER_TAGS_K8S
+
+testing:
+  stage: test
+  coverage: '/^total:\t+\(statements\)\t+(\d+\.\d+)%/'
+  before_script:
+    - export GO111MODULE=on
+    - go mod download
+  script:
+    - go version
+    - go test ./... -coverprofile cover.out
+    - go tool cover -func cover.out
+  extends: .INFRA_RUNNER_TAGS_K8S
+

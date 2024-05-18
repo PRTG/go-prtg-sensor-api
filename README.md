@@ -16,7 +16,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"time"
@@ -43,7 +43,7 @@ func main() {
 		return
 	}
 	// Read the response
-	buffer, err := ioutil.ReadAll(resp.Body)
+	buffer, err := io.ReadAll(resp.Body)
 	if err != nil {
 		sensor.SetError(true)
 		sensor.SetSensorText(err.Error())
